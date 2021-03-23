@@ -3,6 +3,9 @@
  */
 "use strict";
 
-module.exports = (context) => {
-  // TODO Perform some action.
+module.exports = function (context) {
+
+  var extensionSettings = context.utils.getExtensionSettings();
+
+  return extensionSettings;
 };
