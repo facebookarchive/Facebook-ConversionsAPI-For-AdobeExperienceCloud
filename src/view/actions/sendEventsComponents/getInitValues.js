@@ -1,8 +1,9 @@
 export default (initInfo) => {
   const { settings } = initInfo;
-  const { testingString = '' } = settings || {};
+  const { isTestEvent = false, testEventCode = '' } = settings || {};
 
   return {
-    testingString
+    isTestEvent,
+    testEventCode
   };
 };

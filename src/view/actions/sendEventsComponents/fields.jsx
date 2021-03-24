@@ -1,17 +1,29 @@
 import React from 'react';
-import { TextField, Flex } from '@adobe/react-spectrum';
+import { Checkbox, TextField, Flex } from '@adobe/react-spectrum';
 import WrappedTextField from '../../components/wrappedTextField';
+import WrappedCheckboxComponent from '../../components/wrappedCheckboxComponent';
 
-export default () => (
-  <Flex direction="column" gap="size-65">
-    <WrappedTextField
-      name="testingString"
-      component={TextField}
-      width="size-4600"
-      label="some thing"
-      isRequired
-      necessityIndicator="label"
-      supportDataElement
-    />
-  </Flex>
-);
+export default () => {
+  const [selected, setSelection] = React.useState(false);
+  return (
+    <Flex direction="column" gap="size-65">
+      <WrappedCheckboxComponent
+        name="isTestEvent"
+        component={Checkbox}
+        isSelected={selected}
+        onChange={setSelection}
+      >
+        Send as Test Event
+      </WrappedCheckboxComponent>
+      <WrappedTextField
+        name="testEventCode"
+        component={TextField}
+        width="size-4600"
+        label="Test Event Code"
+        isRequired
+        isDisabled={!selected}
+        necessityIndicator="label"
+      />
+    </Flex>
+  );
+};

@@ -1,1 +1,4 @@
-export default ({ testingString }) => ({ testingString });
+export default ({ isTestEvent, testEventCode }) => ({
+  isTestEvent,
+  testEventCode
+});
