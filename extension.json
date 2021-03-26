@@ -38,10 +38,169 @@
       "schema": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
-        "properties": {}
+        "properties": {
+          "isTestEvent":{
+            "type":"boolean",
+            "minLength":1
+          },
+          "testEventCode":{
+            "type":"string",
+            "minLength":1
+          },
+          "event_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "event_time": {
+            "type": "string",
+            "minLength": 1
+          },
+          "event_source_url":{
+            "type":"string",
+            "minLength":1
+          },
+          "opt_out": {
+            "type": "boolean",
+            "minLength": 1
+          },
+          "event_id":{
+            "type":"string",
+            "minLength":1
+          },
+          "action_source":{
+            "type":"string",
+            "minLength":1
+          },
+          "em":{
+            "type":"string",
+            "minLength":1
+          },
+          "ph":{
+            "type":"string",
+            "minLength":1
+          },
+          "ge":{
+            "type":"string",
+            "minLength":1
+          },
+          "db":{
+            "type":"string",
+            "minLength":1
+          },
+          "ln":{
+            "type":"string",
+            "minLength":1
+          },
+          "fn":{
+            "type":"string",
+            "minLength":1
+          },
+          "ct":{
+            "type":"string",
+            "minLength":1
+          },
+          "st":{
+            "type":"string",
+            "minLength":1
+          },
+          "zp":{
+            "type":"string",
+            "minLength":1
+          },
+          "country":{
+            "type":"string",
+            "minLength":1
+          },
+          "external_id":{
+            "type":"string",
+            "minLength":1
+          },
+          "client_ip_address":{
+            "type":"string",
+            "minLength":1
+          },
+          "client_user_agent":{
+            "type":"string",
+            "minLength":1
+          },
+          "fbp":{
+            "type":"string",
+            "minLength":1
+          },
+          "fbc":{
+            "type":"string",
+            "minLength":1
+          },
+          "subscription_id":{
+            "type":"string",
+            "minLength":1
+          },
+          "fb_login_id":{
+            "type":"string",
+            "minLength":1
+          },
+          "lead_id":{
+            "type":"string",
+            "minLength":1
+          },
+          "value":{
+            "type":"string",
+            "minLength":1
+          },
+          "currency":{
+              "type":"string",
+              "minLength":1
+          },
+          "content_name":{
+              "type":"string",
+              "minLength":1
+          },
+          "content_category":{
+              "type":"string",
+              "minLength":1
+          },
+          "content_ids":{
+              "type":"string",
+              "minLength":1
+          },
+          "contents":{
+              "type":"string",
+              "minLength":1
+          },
+          "content_type":{
+              "type":"string",
+              "minLength":1
+          },
+          "order_id":{
+              "type":"string",
+              "minLength":1
+          },
+          "predicted_ltv":{
+              "type":"string",
+              "minLength":1
+          },
+          "num_items":{
+              "type":"string",
+              "minLength":1
+          },
+          "search_string":{
+              "type":"string",
+              "minLength":1
+          },
+          "status":{
+              "type":"string",
+              "minLength":1
+          },
+          "delivery_category":{
+              "type":"string",
+              "minLength":1
+          }
+        }
       },
       "libPath": "src/lib/actions/sendCapiData.js",
-      "viewPath": "actions/sendCapiData.html"
+      "viewPath": "actions/sendCapiData.html",
+      "additionalProperties": true,
+      "required": ["event_name","event_time","client_ip_address","client_user_agent"]
     }
   ]
 }
