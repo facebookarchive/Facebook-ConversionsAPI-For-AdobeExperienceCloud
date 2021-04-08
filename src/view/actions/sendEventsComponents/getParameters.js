@@ -5,8 +5,8 @@ export default () => {
   const parameters = {
     customerInformation:
     [
-      ['client_ip_address', 'Client IP Address', true],
-      ['client_user_agent', 'Client User Agent', true],
+      ['clientIpAddress', 'Client IP Address', true],
+      ['clientUserAgent', 'Client User Agent', true],
       ['em','Email', false],
       ['ph', 'Phone', false],
       ['ge', 'Gender', false],
@@ -17,38 +17,37 @@ export default () => {
       ['st', 'State', false],
       ['zp', 'Zip', false],
       ['country', 'Country', false],
-      ['external_id', 'External ID', false],
+      ['externalId', 'External ID', false],
       ['fbc', 'Click ID', false],
       ['fbp', 'Browser ID', false],
-      ['subscription_id', 'Subscription ID', false],
-      ['fb_login_id', 'Facebook Login ID', false],
-      ['lead_id', 'Lead ID', false]
+      ['subscriptionId', 'Subscription ID', false],
+      ['fbLoginId', 'Facebook Login ID', false],
+      ['leadId', 'Lead ID', false]
     ],
     serverEvents:
     [
-      ['event_name', 'Event Name',true],
-      ['event_time', 'Event Time',true],
-      ['event_source_url', 'Event Source Url', false],
-      ['event_id','Event ID', false],
-      ['action_source','Action Source',false]
+      ['eventName', 'Event Name',true],
+      ['eventTime', 'Event Time',true],
+      ['eventSourceUrl', 'Event Source Url', false],
+      ['eventId','Event ID', false],
+      ['actionSource','Action Source',true]
     ],
     customData:
     [
       ['value','Value', false],
       ['currency', 'Currency (Required for purchase events)', false],
-      ['content_name', 'Content Name', false],
-      ['content_category','Content Category', false],
-      ['content_ids','Content IDs', false],
+      ['contentName', 'Content Name', false],
+      ['contentCategory','Content Category', false],
+      ['contentIds','Content IDs', false],
       ['contents','Contents', false],
-      ['content_type','Content Type', false],
-      ['order_id', 'Order ID', false],
-      ['predicted_ltv', 'Predicted Lifetime', false],
-      ['num_items', 'Number of Items (Use only for InitiateCheckout events)', false],
-      ['search_string', 'Search String (Use only for search events)', false],
+      ['contentType','Content Type', false],
+      ['orderId', 'Order ID', false],
+      ['predictedLtv', 'Predicted Lifetime', false],
+      ['numItems', 'Number of Items (Use only for InitiateCheckout events)', false],
+      ['searchString', 'Search String (Use only for search events)', false],
       ['status', 'Status (Use only with CompleteRegistration events)', false],
-      ['delivery_category', 'Delivery Category', false]
-    ],
-
+      ['deliveryCategory', 'Delivery Category', false]
+    ]
   };
 
   return parameters;

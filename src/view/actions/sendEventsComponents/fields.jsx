@@ -1,15 +1,17 @@
 /**
  * (c) Facebook, Inc. and its affiliates. Confidential and proprietary.
+ *
+ * @format
  */
-import React, {useState} from 'react'
-import {useFormContext } from 'react-hook-form';
+import React, {useState} from 'react';
+import {useFormContext} from 'react-hook-form';
 import {
   Checkbox,
   Content,
   Flex,
   Link,
   Text,
-  TextField
+  TextField,
 } from '@adobe/react-spectrum';
 import WrappedTextField from '../../components/wrappedTextField';
 import WrappedCheckboxComponent from '../../components/wrappedCheckboxComponent';
@@ -17,28 +19,28 @@ import Parameters from './getParameters';
 
 export default () => {
   const {watch} = useFormContext();
-  const isTestEvent = watch("isTestEvent");
+  const isTestEvent = watch('isTestEvent');
   const opt_out = watch('opt_out');
-  const customerInformation = Parameters().customerInformation;
-  const serverEvents = Parameters().serverEvents;
-  const customData = Parameters().customData;
+  const {customerInformation, serverEvents, customData} = Parameters();
 
   return (
-    <Flex direction='column' gap = 'size-65'>
-      <Text> Please set up the data to send events via Faceebook Conversions API </Text>
+    <Flex direction="column" gap="size-65">
+      <Text>
+        {' '}
+        Please set up the data to send events via Faceebook Conversions API{' '}
+      </Text>
       <Content>
         <Link>
-          <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/parameters" target="_blank">
+          <a
+            href="https://developers.facebook.com/docs/marketing-api/conversions-api/parameters"
+            target="_blank">
             Conversions API Parameters Document
           </a>
         </Link>
       </Content>
       <Flex direction="row" gap="size-200">
         <Flex direction="column" gap="size-65">
-          <WrappedCheckboxComponent
-            component={Checkbox}
-            name="isTestEvent"
-          >
+          <WrappedCheckboxComponent component={Checkbox} name="isTestEvent">
             Send as Test Event
           </WrappedCheckboxComponent>
           <WrappedTextField
@@ -50,45 +52,42 @@ export default () => {
             isDisabled={!isTestEvent}
             necessityIndicator="label"
           />
-            <Text> Set up Server Event </Text>
-            {serverEvents.map(([name, label, isRequired], index) => {
-              return (
-                <WrappedTextField
-                  key={index}
-                  name={name}
-                  component={TextField}
-                  width="size-4600"
-                  label={label}
-                  isRequired={isRequired}
-                  necessityIndicator="label"
-                  supportDataElement
-                />
-              )
-            })}
-              <WrappedCheckboxComponent
-                component={Checkbox}
-                name="opt_out"
-              >
-              Opt Out for Ads Delivery Optimization (optional)
-            </WrappedCheckboxComponent>
-          </Flex>
-          <Flex direction="column" gap="size-65">
-            <Text> Set up Custom Data </Text>
-            {customData.map(([name, label, isRequired], index) => {
-              return (
-                <WrappedTextField
-                  key={index}
-                  name={name}
-                  component={TextField}
-                  width="size-4600"
-                  label={label}
-                  isRequired={isRequired}
-                  necessityIndicator="label"
-                  supportDataElement
-                />
-              )
-            })}
-          </Flex>
+          <Text> Set up Server Event </Text>
+          {serverEvents.map(([name, label, isRequired], index) => {
+            return (
+              <WrappedTextField
+                key={index}
+                name={name}
+                component={TextField}
+                width="size-4600"
+                label={label}
+                isRequired={isRequired}
+                necessityIndicator="label"
+                supportDataElement
+              />
+            );
+          })}
+          <WrappedCheckboxComponent component={Checkbox} name="opt_out">
+            Opt Out for Ads Delivery Optimization (optional)
+          </WrappedCheckboxComponent>
+        </Flex>
+        <Flex direction="column" gap="size-65">
+          <Text> Set up Custom Data </Text>
+          {customData.map(([name, label, isRequired], index) => {
+            return (
+              <WrappedTextField
+                key={index}
+                name={name}
+                component={TextField}
+                width="size-4600"
+                label={label}
+                isRequired={isRequired}
+                necessityIndicator="label"
+                supportDataElement
+              />
+            );
+          })}
+        </Flex>
         <Flex direction="column" gap="size-65">
           <Text> Set up Customer Information </Text>
           {customerInformation.map(([name, label, isRequired], index) => {
@@ -103,7 +102,7 @@ export default () => {
                 necessityIndicator="label"
                 supportDataElement
               />
-            )
+            );
           })}
         </Flex>
       </Flex>

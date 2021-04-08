@@ -11,30 +11,37 @@ export default (values) => {
     };
   }
 
-  if (!values.event_name) {
-    errors.event_name = {
+  if (!values.eventName) {
+    errors.eventName = {
       message: 'Please specify an event name',
       type: 'required'
     };
   }
 
-  if (!values.event_time) {
-    errors.event_time = {
+  if (!values.eventTime) {
+    errors.eventTime = {
       message: 'Please specify then event time',
       type: 'required'
     };
   }
 
-  if (!values.client_ip_address) {
-    errors.client_ip_address = {
+  if (!values.clientIpAddress) {
+    errors.clientIpAddress = {
       message: 'Please specify the Client IP Address',
       type: 'required'
     };
   }
 
-  if (!values.client_user_agent) {
-    errors.client_user_agent = {
+  if (!values.clientUserAgent) {
+    errors.clientUserAgent = {
       message: 'Please specify the Client User Agent',
+      type: 'required'
+    };
+  }
+
+  if (!values.actionSource) {
+    errors.actionSource = {
+      message: 'Please specify the Action Source',
       type: 'required'
     };
   }
