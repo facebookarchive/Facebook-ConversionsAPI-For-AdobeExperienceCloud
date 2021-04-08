@@ -25,19 +25,39 @@ export default (values) => {
     };
   }
 
-  if (!values.clientIpAddress) {
-    errors.clientIpAddress = {
-      message: 'Please specify the Client IP Address',
+  if (
+    values.actionSource &&
+    values.actionSource.toLowerCase() === 'website'
+    && !values.clientUserAgent
+  ) {
+    errors.clientUserAgent = {
+      message: 'For website events, please specify the Client User Agent',
       type: 'required'
     };
   }
 
-  if (!values.clientUserAgent) {
-    errors.clientUserAgent = {
-      message: 'Please specify the Client User Agent',
+  if (
+    values.actionSource &&
+    values.actionSource.toLowerCase() === 'website'
+    && !values.clientIpAddress
+  ) {
+    errors.clientIpAddress = {
+      message: 'For website events, please specify the Client IP Address',
       type: 'required'
     };
   }
+
+  if (
+    values.actionSource &&
+    values.actionSource.toLowerCase() === 'website'
+    && !values.eventSourceUrl
+  ) {
+    errors.eventSourceUrl = {
+      message: 'For website events, please specify the Event Source URL',
+      type: 'required'
+    };
+  }
+
 
   if (!values.actionSource) {
     errors.actionSource = {

@@ -16,8 +16,7 @@ import WrappedTextField from "../../components/wrappedTextField";
 import WrappedCheckboxComponent from '../../components/WrappedCheckboxComponent';
 
 export default () => {
-  const {watch, getValues} = useFormContext();
-  const lduEnabled = watch("lduEnabled");
+  const {getValues} = useFormContext();
 
   return (
     <Flex direction="column" gap="size-65">
@@ -45,19 +44,6 @@ export default () => {
         <Link>
           <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/get-started#via-events-manager" target="_blank">
             How to generate a System User access token via Events Manager
-          </a>
-        </Link>
-      </Content>
-      <WrappedCheckboxComponent
-        component={Checkbox}
-        name="lduEnabled"
-      >
-        Enable Limited Data Use
-      </WrappedCheckboxComponent>
-      <Content>
-        <Link>
-          <a href="https://developers.facebook.com/docs/marketing-apis/data-processing-options/" target="_blank">
-            Learn more about Data processing Options for users
           </a>
         </Link>
       </Content>

@@ -20,7 +20,7 @@ import Parameters from './getParameters';
 export default () => {
   const {watch} = useFormContext();
   const isTestEvent = watch('isTestEvent');
-  const opt_out = watch('opt_out');
+  const lduEnabled = watch('lduEnabled');
   const {customerInformation, serverEvents, customData} = Parameters();
 
   return (
@@ -67,9 +67,18 @@ export default () => {
               />
             );
           })}
-          <WrappedCheckboxComponent component={Checkbox} name="opt_out">
-            Opt Out for Ads Delivery Optimization (optional)
+          <WrappedCheckboxComponent component={Checkbox} name="lduEnabled">
+            Enable Limited Data Use
           </WrappedCheckboxComponent>
+          <Content>
+            <Link>
+              <a
+                href="https://developers.facebook.com/docs/marketing-apis/data-processing-options/"
+                target="_blank">
+                Learn more about Data processing Options for users
+              </a>
+            </Link>
+          </Content>
         </Flex>
         <Flex direction="column" gap="size-65">
           <Text> Set up Custom Data </Text>

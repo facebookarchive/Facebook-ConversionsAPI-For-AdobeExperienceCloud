@@ -9,7 +9,7 @@ export default (initInfo) => {
     eventName = '',
     eventTime = '',
     eventSourceUrl = '',
-    optOut = false,
+    optOut = '',
     eventId = '',
     actionSource = '',
     em = '',
@@ -42,7 +42,8 @@ export default (initInfo) => {
     numItems = '',
     searchString = '',
     status = '',
-    deliveryCategory = ''
+    deliveryCategory = '',
+    lduEnabled = true
   } = settings || {};
   return {
     isTestEvent,
@@ -83,6 +84,7 @@ export default (initInfo) => {
     numItems,
     searchString,
     status,
-    deliveryCategory
+    deliveryCategory,
+    lduEnabled
   };
 };

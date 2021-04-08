@@ -5,8 +5,8 @@ export default () => {
   const parameters = {
     customerInformation:
     [
-      ['clientIpAddress', 'Client IP Address', true],
-      ['clientUserAgent', 'Client User Agent', true],
+      ['clientIpAddress', 'Client IP Address', false],
+      ['clientUserAgent', 'Client User Agent', false],
       ['em','Email', false],
       ['ph', 'Phone', false],
       ['ge', 'Gender', false],
@@ -28,9 +28,10 @@ export default () => {
     [
       ['eventName', 'Event Name',true],
       ['eventTime', 'Event Time',true],
-      ['eventSourceUrl', 'Event Source Url', false],
+      ['eventSourceUrl', 'Event Source Url (Required if Action Source is "website")', false],
       ['eventId','Event ID', false],
-      ['actionSource','Action Source',true]
+      ['actionSource','Action Source', true],
+      ['optOut','Opt Out', false]
     ],
     customData:
     [

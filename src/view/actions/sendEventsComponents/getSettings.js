@@ -41,7 +41,8 @@ export default (
         numItems,
         searchString,
         status,
-        deliveryCategory
+        deliveryCategory,
+        lduEnabled
   }
 ) => ({
     isTestEvent,
@@ -82,5 +83,6 @@ export default (
     numItems,
     searchString,
     status,
-    deliveryCategory
+    deliveryCategory,
+    lduEnabled
 });
