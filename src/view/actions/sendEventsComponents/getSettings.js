@@ -42,7 +42,8 @@ export default (
         searchString,
         status,
         deliveryCategory,
-        lduEnabled
+        lduEnabled,
+        customData
   }
 ) => ({
     isTestEvent,
@@ -84,5 +85,6 @@ export default (
     searchString,
     status,
     deliveryCategory,
-    lduEnabled
+    lduEnabled,
+    customData
 });

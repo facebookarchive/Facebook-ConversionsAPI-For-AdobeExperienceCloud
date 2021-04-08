@@ -25,6 +25,20 @@ export default (values) => {
     };
   }
 
+  if (values.clientUserAgent && !values.clientIpAddress) {
+    errors.clientIpAddress = {
+      message: 'IP address is required if user agent is provided',
+      type: 'required'
+    }
+  }
+
+  if (!values.clientUserAgent && values.clientIpAddress) {
+    errors.clientUserAgent = {
+      message: 'User agent is required if IP address is provided',
+      type: 'required'
+    }
+  }
+
   if (
     values.actionSource &&
     values.actionSource.toLowerCase() === 'website'
@@ -64,6 +78,34 @@ export default (values) => {
       message: 'Please specify the Action Source',
       type: 'required'
     };
+  }
+
+  if (values.eventName && values.eventName.toLowerCase() === 'purchase') {
+    try {
+       const payload = JSON.parse(values.customData);
+       if (!payload.hasOwnProperty('currency') || !payload.hasOwnProperty('value')) {
+         errors.customData = {
+          message: 'The parameters "currency" and "value" are required for Purchase events',
+          type: 'required'
+        }
+       }
+    } catch (e) {
+      errors.customData = {
+        message: 'Please enter a valid JSON payload',
+        type: 'required'
+      };
+    }
+  }
+
+  if (values.customData) {
+    try {
+       JSON.parse(values.customData);
+    } catch (e) {
+      errors.customData = {
+        message: 'Please enter a valid JSON payload',
+        type: 'required'
+      };
+    }
   }
 
   return errors;

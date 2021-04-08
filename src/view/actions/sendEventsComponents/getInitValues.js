@@ -43,7 +43,8 @@ export default (initInfo) => {
     searchString = '',
     status = '',
     deliveryCategory = '',
-    lduEnabled = true
+    lduEnabled = true,
+    customData = ''
   } = settings || {};
   return {
     isTestEvent,
@@ -85,6 +86,7 @@ export default (initInfo) => {
     searchString,
     status,
     deliveryCategory,
-    lduEnabled
+    lduEnabled,
+    customData
   };
 };
