@@ -195,12 +195,12 @@
               "type":"string",
               "minLength":1
           }
-        }
+        },
+        "additionalProperties": true,
+        "required": ["event_name","event_time","client_ip_address","client_user_agent"]
       },
       "libPath": "src/lib/actions/sendCapiData.js",
-      "viewPath": "actions/sendCapiData.html",
-      "additionalProperties": true,
-      "required": ["event_name","event_time","client_ip_address","client_user_agent"]
+      "viewPath": "actions/sendCapiData.html"
     }
   ]
 }

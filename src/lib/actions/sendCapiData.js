@@ -3,6 +3,8 @@
  */
 'use strict';
 
+var shaHashingHelper = require('./shaHashingHelper');
+
 module.exports = function ({ utils, arc }) {
   const { getExtensionSettings, getSettings, fetch, logger } = utils;
   const { pixelId, accessToken, lduEnabled } = getExtensionSettings();
@@ -11,7 +13,6 @@ module.exports = function ({ utils, arc }) {
 
   return fetch(url, buildEventBody(getSettings));
 };
-
 
 function buildEventBody(getSettings) {
   const {
@@ -46,7 +47,7 @@ function buildEventBody(getSettings) {
   const lduValue = 'LDU';
   const methodValue = 'POST';
   const contentTypeValue = 'application/json';
-  const agentValue = 'adobe';
+  const agentValue = 'adobe_launch';
 
   return {
     method: methodValue,
@@ -68,22 +69,22 @@ function buildEventBody(getSettings) {
           user_data: {
             client_ip_address: clientIpAddress,
             client_user_agent: clientUserAgent,
-            country: (country ? country : undefined),
-            ct: (city ? city : undefined),
-            db: (dob ? dob : undefined),
-            em: (email ? email : undefined),
-            external_id: (externalId ? externalId : undefined),
+            country: (country ? shaHashingHelper(country) : undefined),
+            ct: (city ? shaHashingHelper(city) : undefined),
+            db: (dob ? shaHashingHelper(dob) : undefined),
+            em: (email ? shaHashingHelper(email) : undefined),
+            external_id: (externalId ? shaHashingHelper(externalId) : undefined),
             fb_login_id: (fbLoginId ? fbLoginId : undefined),
             fbc: (fbc ? fbc : undefined),
             fbp: (fbp ? fbp : undefined),
-            fn: (firstName ? firstName : undefined),
-            ge: (gender ? gender : undefined),
+            fn: (firstName ? shaHashingHelper(firstName) : undefined),
+            ge: (gender ? shaHashingHelper(gender) : undefined),
             lead_id: (leadId ? leadId : undefined),
-            ln: (lastName ? lastName : undefined),
-            ph: (phone ? phone : undefined),
-            st: (state ? state : undefined),
+            ln: (lastName ? shaHashingHelper(lastName) : undefined),
+            ph: (phone ? shaHashingHelper(phone) : undefined),
+            st: (state ? shaHashingHelper(state) : undefined),
             subscription_id: (subscriptionId ? subscriptionId : undefined),
-            zp: (zip ? zip : undefined),
+            zp: (zip ? shaHashingHelper(zip) : undefined),
           },
           custom_data: (customData ? customData : undefined),
         },
