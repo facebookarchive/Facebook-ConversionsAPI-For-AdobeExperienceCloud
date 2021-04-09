@@ -24,6 +24,7 @@ function buildEventBody(getSettings) {
     customData,
     dob,
     email,
+    eventId,
     eventName,
     eventSourceUrl,
     eventTime,
@@ -60,6 +61,7 @@ function buildEventBody(getSettings) {
         {
           event_name: eventName,
           event_time: eventTime,
+          event_id: (eventId ? eventId : undefined),
           event_source_url: (eventSourceUrl ? eventSourceUrl : undefined),
           action_source: actionSource,
           opt_out: (optOut ? optOut : undefined),
