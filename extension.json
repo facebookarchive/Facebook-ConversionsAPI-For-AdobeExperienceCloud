@@ -1,5 +1,5 @@
 {
-  "displayName": "Facebook Conversions API Extension ",
+  "displayName": "Facebook Conversions API Extension",
   "name": "facebook_conversions_api_extension",
   "iconPath": "resources/icons/facebook.svg",
   "platform": "edge",
@@ -8,6 +8,7 @@
   "author": {
     "name": "Facebook, Inc"
   },
+  "exchangeUrl": "https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.105509.html",
   "viewBasePath": "dist/",
   "configuration": {
     "viewPath": "configuration/configuration.html",
@@ -30,7 +31,7 @@
   },
   "actions": [
     {
-      "displayName": "send_CAPI_data",
+      "displayName": "Send Conversions API Event",
       "name": "send_capi_data",
       "schema": {
         "$schema": "http://json-schema.org/draft-04/schema#",
