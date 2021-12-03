@@ -122,11 +122,30 @@ module.exports = (env) => {
         {
           test: /\.styl/,
           include: /src\/view/,
-          loader: 'style-loader!css-loader!stylus-loader'
+          use: [
+            {
+              loader: 'style-loader'
+            },
+            {
+              loader: 'css-loader'
+            },
+            {
+              loader: 'stylus-loader'
+            },
+
+          ],
         },
         {
           test: /\.css/,
-          loaders: ['style-loader', 'css-loader']
+          use: [
+            {
+              loader: 'style-loader'
+            },
+            {
+              loader: 'css-loader'
+            },
+
+          ],
         },
         {
           test: /\.(jpe?g|png|gif)$/,
@@ -134,8 +153,15 @@ module.exports = (env) => {
         },
         {
           test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-
-          loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 10000,
+                mimetype: 'application/font-woff'
+              }
+            }
+          ]
         },
         {
           test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,

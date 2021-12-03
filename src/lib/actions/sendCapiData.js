@@ -8,11 +8,27 @@ var shaHashingHelper = require('./shaHashingHelper');
 module.exports = function ({ utils, arc }) {
   const { getExtensionSettings, getSettings, fetch, logger } = utils;
   const { pixelId, accessToken, lduEnabled } = getExtensionSettings();
-  const version = 'v10.0';
+  const version = 'v12.0';
   const url = `https://graph.facebook.com/${version}/${pixelId}/events/?access_token=${accessToken}`;
 
   return fetch(url, buildEventBody(getSettings));
 };
+
+function parseCustomJsonData(customData) {
+  if (!customData) {
+    return undefined;
+  }
+  try {
+    if ("string" === typeof(customData)) {
+      // Inside custom data, some of the json object parameters come as strings. By trying a parse of those objects we get an error, so we need to remove this extra quotes before parsing.
+      return JSON.parse(customData.replaceAll('"[', '[').replaceAll(']"', ']'))
+    }
+    return customData;
+  } catch (err) {
+    return undefined;
+  }
+}
+
 
 function buildEventBody(getSettings) {
   const {
@@ -88,7 +104,7 @@ function buildEventBody(getSettings) {
             subscription_id: (subscriptionId ? subscriptionId : undefined),
             zp: (zip ? shaHashingHelper(zip) : undefined),
           },
-          custom_data: (customData ? customData : undefined),
+          custom_data: parseCustomJsonData(customData),
         },
       ],
       partner_agent: agentValue,
