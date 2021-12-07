@@ -44,7 +44,8 @@ export default () => {
     for targeted attribution. You must provide at least one of the following keys in your
     request. For more detail, see the `;
   const customDataText = `Use these parameters to send additional data we can use for ads
-    delivery optimization. For Purchase events, value and currency are required. For more
+    delivery optimization. For Purchase events, value and currency are required. If data elements
+    are being utilized, please validate that they are being replaced correcly. For more
     detail, see the `;
   const testEventText = `You can verify that your server events are received correctly by
     Facebook by using the Test Events tool in Events Manager to generate a test ID. Set the

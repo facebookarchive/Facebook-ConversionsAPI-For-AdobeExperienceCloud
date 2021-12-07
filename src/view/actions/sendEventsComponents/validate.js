@@ -80,32 +80,24 @@ export default (values) => {
     };
   }
 
-  if (values.eventName && values.eventName.toLowerCase() === 'purchase') {
+  if (typeof values.customData === 'string' && !values.customData.includes("{{")) {
     try {
-       const payload = JSON.parse(values.customData);
-       if (!payload.hasOwnProperty('currency') || !payload.hasOwnProperty('value')) {
-         errors.customData = {
+      const payload = JSON.parse(values.customData);
+      if (
+        values.eventName && values.eventName.toLowerCase() === 'purchase' &&
+        !payload.hasOwnProperty('currency') || !payload.hasOwnProperty('value')
+      ) {
+        errors.customData = {
           message: 'The parameters "currency" and "value" are required for Purchase events',
           type: 'required'
         }
-       }
+      }
     } catch (e) {
-      errors.customData = {
-        message: 'Please enter a valid JSON payload',
-        type: 'required'
-      };
-    }
-  }
-
-  if (values.customData) {
-    try {
-       JSON.parse(values.customData);
-    } catch (e) {
-      errors.customData = {
-        message: 'Please enter a valid JSON payload',
-        type: 'required'
-      };
-    }
+        errors.customData = {
+          message: 'Please enter a valid JSON payload',
+          type: 'required'
+        };
+      }
   }
 
   return errors;
