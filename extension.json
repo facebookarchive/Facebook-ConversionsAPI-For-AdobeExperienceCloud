@@ -3,7 +3,7 @@
   "name": "facebook_conversions_api_extension",
   "iconPath": "resources/icons/facebook.svg",
   "platform": "edge",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Send web events through Edge to Facebook's Conversions API",
   "author": {
     "name": "Facebook, Inc"

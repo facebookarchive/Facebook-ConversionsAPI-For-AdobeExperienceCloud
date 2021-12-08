@@ -14,6 +14,20 @@ module.exports = function ({ utils, arc }) {
   return fetch(url, buildEventBody(getSettings));
 };
 
+function parseCustomJsonData(customData) {
+  if (!customData) {
+    return undefined;
+  }
+  try {
+    if ("string" === typeof customData) {
+      return JSON.parse(customData)
+    }
+    return customData;
+  } catch (err) {
+    return undefined;
+  }
+}
+
 
 function buildEventBody(getSettings) {
   const {
@@ -89,7 +103,7 @@ function buildEventBody(getSettings) {
             subscription_id: (subscriptionId ? subscriptionId : undefined),
             zp: (zip ? shaHashingHelper(zip) : undefined),
           },
-          custom_data: customData ? customData : undefined,
+          custom_data: parseCustomJsonData(customData),
         },
       ],
       partner_agent: agentValue,
