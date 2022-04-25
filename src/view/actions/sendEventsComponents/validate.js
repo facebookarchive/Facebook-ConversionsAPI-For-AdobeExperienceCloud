@@ -25,16 +25,9 @@ export default (values) => {
     };
   }
 
-  if (values.clientUserAgent && !values.clientIpAddress) {
-    errors.clientIpAddress = {
-      message: 'IP address is required if user agent is provided',
-      type: 'required'
-    }
-  }
-
-  if (!values.clientUserAgent && values.clientIpAddress) {
+  if (!values.clientUserAgent) {
     errors.clientUserAgent = {
-      message: 'User agent is required if IP address is provided',
+      message: 'User agent is required',
       type: 'required'
     }
   }
@@ -46,17 +39,6 @@ export default (values) => {
   ) {
     errors.clientUserAgent = {
       message: 'For website events, please specify the Client User Agent',
-      type: 'required'
-    };
-  }
-
-  if (
-    values.actionSource &&
-    values.actionSource.toLowerCase() === 'website'
-    && !values.clientIpAddress
-  ) {
-    errors.clientIpAddress = {
-      message: 'For website events, please specify the Client IP Address',
       type: 'required'
     };
   }
