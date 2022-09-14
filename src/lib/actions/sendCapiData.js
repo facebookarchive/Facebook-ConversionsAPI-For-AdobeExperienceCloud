@@ -8,7 +8,7 @@ var shaHashingHelper = require('./shaHashingHelper');
 module.exports = function ({ utils, arc }) {
   const { getExtensionSettings, getSettings, fetch, logger } = utils;
   const { pixelId, accessToken, lduEnabled } = getExtensionSettings();
-  const version = 'v12.0';
+  const version = 'v14.0';
   const url = `https://graph.facebook.com/${version}/${pixelId}/events/?access_token=${accessToken}`;
 
   return fetch(url, buildEventBody(getSettings));
