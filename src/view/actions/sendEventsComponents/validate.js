@@ -66,8 +66,9 @@ export default (values) => {
     try {
       const payload = JSON.parse(values.customData);
       if (
-        values.eventName && values.eventName.toLowerCase() === 'purchase' &&
-        !payload.hasOwnProperty('currency') || !payload.hasOwnProperty('value')
+        values.eventName &&
+        values.eventName.toLowerCase() === 'purchase' &&
+        (!payload.hasOwnProperty('currency') || !payload.hasOwnProperty('value'))
       ) {
         errors.customData = {
           message: 'The parameters "currency" and "value" are required for Purchase events',
