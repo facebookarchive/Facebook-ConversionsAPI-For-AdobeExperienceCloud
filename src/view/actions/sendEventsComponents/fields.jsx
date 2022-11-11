@@ -35,12 +35,12 @@ export default () => {
   const customDataURI =
     'https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/custom-data';
 
-  const facebookEventSetupText = `Use the data mapping below to configure a Facebook event using
-    your data from Adobe Edge. These events will be sent to your Pixel via Facebook Conversions
+  const facebookEventSetupText = `Use the data mapping below to configure a Meta event using
+    your data from Adobe Edge. These events will be sent to your Pixel via Meta Conversions
     API. For more information about these parameters, go to `;
   const serverEventsParametersText =
-    'Send actions that occur as a Facebook Standard or Custom Event. For more detail, see the ';
-  const customerInformationText = `These parameters are a set of identifiers Facebook can use
+    'Send actions that occur as a Meta Standard or Custom Event. For more detail, see the ';
+  const customerInformationText = `These parameters are a set of identifiers Meta can use
     for targeted attribution. You must provide at least one of the following keys in your
     request. For more detail, see the `;
   const customDataText = `Use these parameters to send additional data we can use for ads
@@ -48,19 +48,19 @@ export default () => {
     are being utilized, please validate that they are being replaced correcly. For more
     detail, see the `;
   const testEventText = `You can verify that your server events are received correctly by
-    Facebook by using the Test Events tool in Events Manager to generate a test ID. Set the
+    Meta by using the Test Events tool in Events Manager to generate a test ID. Set the
     test ID here to start seeing event activity appear in the Test Events window.`;
 
   return (
     <Flex direction="row" gap="size-200">
       <Flex direction="column" gap="size-65">
-        <Heading> Facebook Event Setup </Heading>
+        <Heading> Meta Event Setup </Heading>
         <Divider size="S" />
         <Content>
           <Text>{facebookEventSetupText}</Text>
           <Link>
             <a href={parametersURI} target="_blank" rel="noreferrer">
-              Facebook for Developers.
+              Meta for Developers.
             </a>
           </Link>
         </Content>

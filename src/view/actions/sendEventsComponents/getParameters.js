@@ -21,7 +21,7 @@ export default () => {
       ['fbc', 'Click ID'],
       ['fbp', 'Browser ID'],
       ['subscriptionId', 'Subscription ID'],
-      ['fbLoginId', 'Facebook Login ID'],
+      ['fbLoginId', 'Meta Login ID'],
       ['leadId', 'Lead ID']
     ],
     serverEvents:

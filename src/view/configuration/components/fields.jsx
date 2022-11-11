@@ -40,7 +40,7 @@ export default () => {
         supportDataElement
       />
       <Content width="size-4600">
-       A Facebook System User access token is required to send events via Conversions API.{' '}
+       A Meta System User access token is required to send events via Conversions API.{' '}
         <Link>
           <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/get-started#via-events-manager" target="_blank">
             How to generate a System User access token via Events Manager

@@ -1,12 +1,12 @@
 {
-  "displayName": "Facebook Conversions API Extension",
+  "displayName": "Meta Conversions API Extension",
   "name": "facebook_conversions_api_extension",
-  "iconPath": "resources/icons/facebook.svg",
+  "iconPath": "resources/icons/meta.svg",
   "platform": "edge",
   "version": "1.0.7",
-  "description": "Send web events through Edge to Facebook's Conversions API",
+  "description": "Send web events through Edge to Meta's Conversions API",
   "author": {
-    "name": "Facebook, Inc"
+    "name": "Meta Platforms, Inc"
   },
   "exchangeUrl": "https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.105509.html",
   "viewBasePath": "dist/",

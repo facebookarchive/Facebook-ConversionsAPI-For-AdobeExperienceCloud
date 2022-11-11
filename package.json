@@ -1,11 +1,11 @@
 {
-  "displayName": "Facebook_CAPI_Extension",
+  "displayName": "Meta_CAPI_Extension",
   "name": "facebook_capi_extension",
   "platform": "edge",
   "version": "1.0.0",
-  "description": "Send web signal through Edge to Facebook's Conversions API",
+  "description": "Send web signal through Edge to Meta's Conversions API",
   "author": {
-    "name": "Facebook, Inc"
+    "name": "Meta Platforms, Inc"
   },
   "scripts": {
     "build": "rm -rf dist && webpack --mode=production",
@@ -42,7 +42,7 @@
     "react-hook-form": "^6.15.5"
   },
   "devDependencies": {
-    "@adobe/reactor-sandbox": "^12.3.1",
+    "@adobe/reactor-sandbox": "^12.4.0",
     "@babel/core": "^7.13.15",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-transform-runtime": "^7.13.15",
