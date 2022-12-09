@@ -3,10 +3,12 @@
   "name": "facebook_conversions_api_extension",
   "iconPath": "resources/icons/meta.svg",
   "platform": "edge",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Send web events through Edge to Meta's Conversions API",
   "author": {
-    "name": "Meta Platforms, Inc"
+    "name": "Adobe",
+    "url": "http://adobe.com",
+    "email": "reactor@adobe.com"
   },
   "exchangeUrl": "https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.105509.html",
   "viewBasePath": "dist/",
